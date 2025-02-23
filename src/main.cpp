@@ -1,54 +1,34 @@
 #include <iostream>
-#include <vector>
 
-#include "../include/user.h"
-#include "../include/utility.h"
+#include "../include/Race.h"
+#include "../include/Snail.h"
 
-/*int sum(const int left, const int right) noexcept
-{
-    if (left == 1) {
-        throw std::invalid_argument("Invalid input");
-    }
+void func(Snail snail) {
 
-    return left + right;
-}*/
+}
+
+void test() {
+    Snail snail1("Bob", 15);
+    Snail snail2("Piter", 17);
+    Snail snail3("Jeff", 30);
+
+    Race race("Race 1", new Snail[3]{snail1, snail2, snail3}, 100);
+    std::cout << &snail1 << std::endl;
+
+    std::cout << &race.snails_[0] << std::endl;
+}
 
 int main()
 {
-    /*try {
-        sum(1,3);
-    }
-    catch (const std::invalid_argument& e) {
+    // 1
+    /*Snail snail(10);
+    func(snail);*/
 
-    }*/
+    // 2
+    /*func(Snail(10));*/
 
-    /*constexpr int a = 15;
+    // 3
+    // func(10); - compilation error
 
-    std::cout << universalNumber(a);*/
-
-    /*const auto x = multiply<float>(3, 5);*/
-
-    /*std::string text1 = "abc";
-    std::string text2 = "abc";
-
-    if (text1 == text2) {
-        std::cout << "text1" << std::endl;
-    }*/
-
-    User user1("login", "password");
-    User user2("superkeks", "12345", "Kate", "Shepard");
-
-    user1.setFirstName("Artur");
-    user1.setLastName("Morgan");
-
-    try {
-        std::cout << user1.getFirstName() << " " << user1.getLastName() << std::endl;
-    }
-    catch (std::domain_error &ex) {
-        std::cout << ex.what() << std::endl;
-    }
-
-    user1.changeLogin("newLogin", "password");
-
-    std::cout << "End" << std::endl;
+    test();
 }

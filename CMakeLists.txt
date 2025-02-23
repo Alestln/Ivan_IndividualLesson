@@ -4,7 +4,8 @@ project(IndividualLesson)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(IndividualLesson src/main.cpp
-        include/utility.h
-        include/user.h
-        src/user.cpp
+        include/Snail.h
+        src/Snail.cpp
+        include/Race.h
+        src/Race.cpp
 )
